@@ -1,0 +1,6 @@
+setwd("C:/Project")
+data <- read.csv("household_power_consumption.txt", Header = T, sep = ";", na.striings = "?", check.names=F, stirngsAsFactors =F)
+data1 <- subset(data, Data %in% c("1/2/2007","2/2/2007"))
+data1$Date <- as.data(data1$Date, format= "%d/%m/%Y")
+data1$date <- as.Date(data1$Date, format = "%d/%m/%Y")
+hist(data1$Global_active_power, main = 'Global Active Power', xlab= "Global active power(kW)", ylab= "Frequency", col= "Red")
